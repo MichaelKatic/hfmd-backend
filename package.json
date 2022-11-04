@@ -1,0 +1,32 @@
+{
+  "name": "hfmd-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.4.6",
+    "@strapi/plugin-users-permissions": "4.4.6",
+    "@strapi/strapi": "4.4.6",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "0a703262-78e0-42ee-b98a-b86f34d37ad9"
+  },
+  "engines": {
+    "node": ">=14.16.0 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "PowerShell Launch Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "enter path or command to execute e.g.: ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
+            "cwd": "${cwd}"
+        },
+        {
+            "command": "npx strapi develop",
+            "name": "strapi develop",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "C:/Stuff/Workspace/python/envs/aws/Scripts/Activate",
+            "name": "Python Shell",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "en"
+        }
+    ]
+}
