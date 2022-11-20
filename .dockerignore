@@ -3,15 +3,9 @@ license.txt
 exports
 *.cache
 build
-.strapi-updater.json# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
+.strapi-updater.json
+.elasticbeanstalk/*
+.git
 .gitignore# Elastic Beanstalk Files
 .elasticbeanstalk/*
 .git

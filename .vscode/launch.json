@@ -1,32 +1,28 @@
 {
     "configurations": [
         {
-            "name": "PowerShell Launch Script",
-            "type": "PowerShell",
-            "request": "launch",
-            "script": "enter path or command to execute e.g.: ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
-            "cwd": "${cwd}"
-        },
-        {
+            "name": "Run Strapi",
             "command": "npx strapi develop",
-            "name": "strapi develop",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "command": "C:/Stuff/Workspace/python/envs/aws/Scripts/Activate",
-            "name": "Python Shell",
+            "name": "Run Strapi (EB Docker)",
+            "command": "./launch_scripts/run_strapi_eb_docker.sh",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "name": "Python: Current File",
-            "type": "python",
+            "name": "AWS EB Deploy",
+            "command": "./launch_scripts/aws_eb_debploy.sh",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "en"
-        }
+            "type": "node-terminal"
+        },
+        {
+            "name": "AWS EB SSH",
+            "command": "./launch_scripts/aws_eb_ssh.sh",
+            "request": "launch",
+            "type": "node-terminal"
+        },
     ]
 }
