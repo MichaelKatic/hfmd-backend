@@ -11,7 +11,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 
-WORKDIR /hfmd-cms
+WORKDIR /hfmd-cms/hfmd-strapi
 
 COPY ./package.json ./
 COPY ./package-lock.json ./

@@ -1,57 +1,70 @@
-# 🚀 Getting started with Strapi
+# How This Repo Was Created
+## Create strapi backend
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+1. npx create-strapi-app@latest hfmd-strapi
+1. install posgress on local machine
+1. Setup AWS RDS with postgress following instructions [here](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment/hosting-guides/amazon-aws.html)
+1. add admin user via url: http://localhost:1337/admin/auth/register-admin
+1. add file .vscode/launch.json with contents:
+    ```
+    {
+        "configurations": [
+            {
+                "command": "npx strapi develop",
+                "name": "strapi develop",
+                "request": "launch",
+                "type": "node-terminal"
+            }
+        ]
 
-### `develop`
+    }
+    ```
+1. Install plugins
+	npm install strapi-plugin-react-editorjs
+	npm run strapi install graphql
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+1. Other possibly useful plugins:
+    - https://market.strapi.io/plugins/strapi-google-auth
+    - https://market.strapi.io/plugins/@chartbrew-plugin-strapi
+    - View all http://localhost:1337/admin/marketplace
 
-```
-npm run develop
-# or
-yarn develop
-```
+1. Set up API token: http://localhost:1337/admin/settings/api-tokens/
+1. deployment guide: https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html
+1. Access graphql ui here: http://localhost:1337/graphql
+	example queries here: https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/graphql-api.html#fetch-a-single-entry
 
-### `start`
+## AWS Create Eb Environment
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+1. activate eb paython env: `C:/Stuff/Workspace/python/envs/aws/Scripts/Activate`
+1. eb init -p docker hfmd-cms
+1. eb platform select
+1. eb create --instance_type t2.medium --single --timeout 30
 
-```
-npm run start
-# or
-yarn start
-```
+## Commands 
 
-### `build`
+### Run/Deploy/Debug commands
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+| Command | Description |
+| - | - |
+| `npx strapi develop` | Run local dev |
+| `eb local run --port 1337` | Run local in docker |
+| `docker stats "strapi/base"` | Docker stats (todo verify command is correct) |
+| `eb ssh` | ssh into eb instance |
+| `eb deploy` | deploy to eb environment |
+| `/envs/aws/Scripts/Activate` | Activate python virtual env for running eb commands. Run in CMD, not PowerShell. Full path `C:/Stuff/Workspace/python/envs/aws/Scripts/Activate` |
 
-```
-npm run build
-# or
-yarn build
-```
+### Python commands
 
-## ⚙️ Deployment
+| Command | Description |
+| - | - |
+| `pip install awsebcli --upgrade --user` | Install AWS EB CLI |
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+### Strapi Command Line
 
-## 📚 Learn more
+The Strapi CLI has all kinds of useful commands. Read more about them [here](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-new). A few I use are:
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+| Command | Description |
+| - | - |
+| `npm run strapi routes:list` | Get avaialable routes
+| `strapi develop --watch-admin --browser 'google chrome'`| auto reload | 
+| `strapi admin:create-user` | Create admin user |

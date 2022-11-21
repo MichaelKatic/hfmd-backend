@@ -3,6 +3,7 @@
         {
             "name": "Run Strapi",
             "command": "npx strapi develop",
+            "cwd": "${workspaceFolder}/hfmd-strapi",
             "request": "launch",
             "type": "node-terminal"
         },
@@ -14,7 +15,7 @@
         },
         {
             "name": "AWS EB Deploy",
-            "command": "./launch_scripts/aws_eb_debploy.sh",
+            "command": "./launch_scripts/aws_eb_deploy.sh",
             "request": "launch",
             "type": "node-terminal"
         },

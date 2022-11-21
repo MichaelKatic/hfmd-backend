@@ -113,15 +113,3 @@ exports
 dist
 build
 .strapi-updater.json
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-
-
-############################
-# Other
-############################
-
-*.env
