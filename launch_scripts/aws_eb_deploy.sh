@@ -1,3 +1,4 @@
+#!/bin/bash
 # cd /c/Stuff/Workspace/hfmd-cms
 
 environment="hfmd-cms-prod"

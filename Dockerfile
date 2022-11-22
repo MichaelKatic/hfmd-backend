@@ -11,14 +11,16 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 
-WORKDIR /hfmd-cms/hfmd-strapi
+ENV DATABASE_PASSWORD=VlXMdl130nsU
 
-COPY ./package.json ./
-COPY ./package-lock.json ./
+WORKDIR /hfmd-strapi
+
+COPY ./hfmd-strapi/package.json ./
+COPY ./hfmd-strapi/package-lock.json ./
 
 RUN npm install
 
-COPY . .
+COPY ./hfmd-strapi .
 
 ENV NODE_ENV development
 

@@ -68,3 +68,12 @@ The Strapi CLI has all kinds of useful commands. Read more about them [here](htt
 | `npm run strapi routes:list` | Get avaialable routes
 | `strapi develop --watch-admin --browser 'google chrome'`| auto reload | 
 | `strapi admin:create-user` | Create admin user |
+
+## Running Local in Docker
+
+1. Install PgAdmin to setup local postgres database
+1. Create new db (DATABASE_NAME=strapi. DATABASE_USERNAME=postgres)
+1. Allow outside connections (to allow docker to connect). Set these in the following files. ([Related SO](https://stackoverflow.com/questions/1287067/unable-to-connect-postgresql-to-remote-database-using-pgadmin))
+    * C:\Program Files\PostgreSQL\15\data\postgresql.conf: `listen_addresses = '*'`
+    * C:\Program Files\PostgreSQL\15\data\pg_hba.conf: `host all all 0.0.0.0/0 md5`
+1. Run `ipconfig` and set local.env var "DATABASE_HOST" to value. 
