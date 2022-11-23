@@ -8,6 +8,13 @@
             "type": "node-terminal"
         },
         {
+            "name": "Build Strapi",
+            "command": "npx strapi build",
+            "cwd": "${workspaceFolder}/hfmd-strapi",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
             "name": "Run Strapi (EB Docker)",
             "command": "./launch_scripts/run_strapi_eb_docker.sh",
             "request": "launch",
