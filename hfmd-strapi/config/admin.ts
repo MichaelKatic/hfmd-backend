@@ -5,5 +5,5 @@ export default ({ env }) => ({
   apiToken: {
     salt: env('API_TOKEN_SALT'),
   },
-  url: env('WEBSITE_URL') + '/admin',
+  url: env('ADMIN_URL'),
 });
