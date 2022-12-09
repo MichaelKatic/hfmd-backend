@@ -1,34 +1,40 @@
 {
     "configurations": [
         {
-            "name": "Run Strapi",
+            "name": "Install",
+            "command": "npm install",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Start",
             "command": "npx strapi develop",
             "cwd": "${workspaceFolder}/hfmd-strapi",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "name": "Build Strapi",
+            "name": "Build",
             "command": "npx strapi build",
             "cwd": "${workspaceFolder}/hfmd-strapi",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "name": "Run Strapi (EB Docker)",
-            "command": "./launch_scripts/run_strapi_eb_docker.sh",
+            "name": "Start (EB Docker Build)",
+            "command": "./launch-scripts/run_strapi_eb_docker.sh",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "name": "AWS EB Deploy",
-            "command": "./launch_scripts/aws_eb_deploy.sh",
+            "name": "Deploy (AWS EB)",
+            "command": "./launch-scripts/aws_eb_deploy.sh",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "name": "AWS EB SSH",
-            "command": "./launch_scripts/aws_eb_ssh.sh",
+            "name": "SSH (AWS EB)",
+            "command": "./launch-scripts/aws_eb_ssh.sh",
             "request": "launch",
             "type": "node-terminal"
         },
