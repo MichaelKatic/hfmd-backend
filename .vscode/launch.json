@@ -22,19 +22,19 @@
         },
         {
             "name": "Start (EB Docker Build)",
-            "command": "./launch-scripts/run_strapi_eb_docker.sh",
+            "command": "./launch-scripts/run-strapi-eb-docker.sh",
             "request": "launch",
             "type": "node-terminal"
         },
         {
             "name": "Deploy (AWS EB)",
-            "command": "./launch-scripts/aws_eb_deploy.sh",
+            "command": "./launch-scripts/aws-eb-deploy.sh",
             "request": "launch",
             "type": "node-terminal"
         },
         {
             "name": "SSH (AWS EB)",
-            "command": "./launch-scripts/aws_eb_ssh.sh",
+            "command": "./launch-scripts/aws-eb-ssh.sh",
             "request": "launch",
             "type": "node-terminal"
         },
