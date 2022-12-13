@@ -10,7 +10,7 @@ source /c/Stuff/Workspace/python/envs/aws/Scripts/Activate
 eb use $environment
 
 echo "Setting environment variables."
-eb setenv `cat ./launch_scripts/env/$environment.env | sed '/^#/ d' | sed '/^$/ d'`
+eb setenv `cat ./launch-scripts/env/$environment.env | sed '/^#/ d' | sed '/^$/ d'`
 
 echo "Deploying to environment."
 eb deploy
